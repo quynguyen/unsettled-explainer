@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Unsettled, explained: Koonin's climate book, its critics, and what climate models can really predict</title>
+<meta name="description" content="An explainer of Steven E. Koonin's book Unsettled, with animated figures, a steelman of its critics, and a reframing of climate science as climate modelling compared with economic modelling.">
+<style>
+:root{--bg:#fbfaf7;--ink:#1d232b;--mute:#5b6572;--line:#e3e0d8;--card:#fff;--accent:#0f6e8c;--accent2:#c2531b;--good:#2e7d4f;--warn:#b7791f;--bad:#b23b3b;--book:#eef5fb;--bookline:#5a8fc0;--crit:#fdf1ec;--critline:#d07a52;--ex:#eef7f0;--exline:#4f9a6a;--ill:#fff7e0;--illline:#d1a43a;--r:14px;--maxw:860px}
+@media (prefers-color-scheme:dark){:root{--bg:#12161b;--ink:#e6e9ee;--mute:#9aa5b1;--line:#2a313a;--card:#1a2027;--accent:#4fb3d6;--accent2:#f08a55;--book:#16232f;--bookline:#4f86b8;--crit:#2a1c16;--critline:#c27352;--ex:#16261c;--exline:#4f9a6a;--ill:#2a2414;--illline:#b9902f}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+a{color:var(--accent)}a:hover{text-decoration-thickness:2px}
+header.hero{padding:72px 20px 48px;background:linear-gradient(135deg,#0f3b52,#0f6e8c 55%,#c2531b);color:#fff}
+header.hero .wrap{max-width:var(--maxw);margin:auto}
+.kicker{text-transform:uppercase;letter-spacing:.14em;font-size:.78rem;opacity:.85}
+h1{font-size:clamp(2rem,5vw,3.1rem);line-height:1.1;margin:.3em 0 .3em}
+.sub{font-size:1.15rem;opacity:.92;max-width:680px}
+main{max-width:var(--maxw);margin:auto;padding:0 20px 80px}
+section{padding-top:56px}
+h2{font-size:1.7rem;line-height:1.2;margin:0 0 .5em;border-top:3px solid var(--ink);padding-top:14px}
+h2 .n{color:var(--accent2);margin-right:.35em}
+h3{font-size:1.2rem;margin:1.6em 0 .4em}
+.tldr{background:var(--card);border:1px solid var(--line);border-left:6px solid var(--accent2);border-radius:var(--r);padding:18px 22px;margin-top:-28px;position:relative;box-shadow:0 8px 30px rgba(0,0,0,.08)}
+.tldr h2{border:0;padding:0;font-size:1.25rem}
+.tldr ul{margin:.3em 0 0;padding-left:1.2em}
+nav.toc{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:16px 22px;margin-top:28px}
+nav.toc ol{columns:2;column-gap:28px;margin:.3em 0 0;padding-left:1.3em}
+@media(max-width:620px){nav.toc ol{columns:1}}
+.box{border-radius:10px;padding:14px 18px;margin:18px 0;border-left:5px solid}
+.box .lbl{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700;display:block;margin-bottom:4px;opacity:.85}
+.book{background:var(--book);border-color:var(--bookline)}
+.crit{background:var(--crit);border-color:var(--critline)}
+.ex{background:var(--ex);border-color:var(--exline)}
+.ill{background:var(--ill);border-color:var(--illline)}
+blockquote{margin:16px 0;padding:10px 18px;border-left:4px solid var(--bookline);background:var(--book);border-radius:0 10px 10px 0;font-style:italic}
+blockquote.c{border-color:var(--critline);background:var(--crit)}
+blockquote cite{display:block;font-style:normal;font-size:.85rem;color:var(--mute);margin-top:4px}
+.fig{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px 18px 14px;margin:26px 0}
+.fig h4{margin:0 0 4px;font-size:1.05rem}
+.fig .cap{font-size:.9rem;color:var(--mute);margin:.5em 0 0}
+.fig svg{width:100%;height:auto;display:block;overflow:visible}
+.story{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+@media(max-width:620px){.story{grid-template-columns:1fr}}
+.story div{background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:10px 12px;font-size:.92rem}
+.story b{display:block;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+.pill{display:inline-block;font-size:.74rem;font-weight:700;padding:2px 9px;border-radius:999px;color:#fff;white-space:nowrap;vertical-align:middle}
+.p-hi{background:var(--good)}.p-med{background:var(--warn)}.p-lo{background:var(--bad)}.p-ill{background:#8a7a3a}.p-real{background:var(--accent)}
+table{width:100%;border-collapse:collapse;font-size:.92rem;margin:12px 0}
+th,td{border-bottom:1px solid var(--line);padding:8px 8px;text-align:left;vertical-align:top}
+th{font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;color:var(--mute)}
+.tablewrap{overflow-x:auto}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:620px){.grid2{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.card h4{margin:0 0 6px}
+dl.gloss dt{font-weight:700;margin-top:10px}dl.gloss dd{margin:2px 0 0 0;color:var(--ink)}
+ol.src{font-size:.88rem;padding-left:2.2em}ol.src li{margin:4px 0;word-break:break-word}
+sup a{text-decoration:none;font-size:.75em}
+.legend{display:flex;flex-wrap:wrap;gap:14px;font-size:.85rem;color:var(--mute);margin:6px 0}
+.legend i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:5px;vertical-align:-1px}
+footer{max-width:var(--maxw);margin:auto;padding:30px 20px 60px;color:var(--mute);font-size:.85rem}
+/* reveal */
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+.grow{transform-box:fill-box;transform-origin:left center;transform:scaleX(0);transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
+.growy{transform-box:fill-box;transform-origin:center bottom;transform:scaleY(0);transition:transform 1s cubic-bezier(.2,.7,.2,1)}
+.in .grow,.in .growy{transform:none}
+.draw{stroke-dasharray:var(--len,2000);stroke-dashoffset:var(--len,2000);transition:stroke-dashoffset 2.2s ease}
+.in .draw{stroke-dashoffset:0}
+.fade{opacity:0;transition:opacity .8s ease}.in .fade{opacity:1}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+.in .pulse{animation:pulse 2.4s ease-in-out infinite}
+@keyframes jitter{0%{transform:translate(0,0)}25%{transform:translate(1.5px,-1px)}50%{transform:translate(-1px,1.5px)}75%{transform:translate(1px,1px)}100%{transform:translate(0,0)}}
+.in .jit{animation:jitter 1.8s ease-in-out infinite}
+svg text{fill:var(--ink);font-family:inherit}
+svg .m{fill:var(--mute)}
+svg .ax{stroke:var(--line)}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal,.grow,.growy,.draw,.fade{opacity:1!important;transform:none!important;transition:none!important;stroke-dashoffset:0!important}.pulse,.jit{animation:none!important}}
+.btn{font:inherit;font-size:.85rem;border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:999px;padding:4px 12px;cursor:pointer;margin:4px 6px 0 0}
+.btn[aria-pressed=true]{background:var(--accent);color:#fff;border-color:var(--accent)}
+</style>
+</head>
+<body>
+<header class="hero"><div class="wrap">
+<div class="kicker">Explainer · Climate science, models &amp; uncertainty</div>
+<h1>Unsettled, explained</h1>
+<p class="sub">Steven E. Koonin's book about what climate science does and doesn't tell us. This page covers its strongest ideas, its figures and how much weight each can bear, the best case its critics make, and a closer look at climate science as <em>climate modelling</em>.</p>
+</div></header>
+<main>
+
+<div class="tldr reveal">
+<h2>TL;DR</h2>
+<ul>
+<li><b>The book:</b> <em>Unsettled</em> (BenBella, 2021; updated and expanded paperback June 2024) by physicist Steven Koonin, a former BP chief scientist and Obama-era DOE Under Secretary for Science.<sup><a href="#s1">1</a>,<a href="#s5">5</a></sup> He accepts that the world is warming and that humans are contributing. What he disputes is the certainty, the size of the impacts and the urgency that reach the public.</li>
+<li><b>Core move:</b> he reads the <em>body</em> of the IPCC and US assessment reports against their <em>summaries</em> and the headlines. He finds that many confident public claims, about hurricanes, US heat waves, sea-level acceleration and economic ruin, have low-confidence or no-trend findings underneath them in the reports themselves.</li>
+<li><b>Most insightful bits:</b> human forcing is a ~1% nudge on enormous energy flows. Models are tuned, are coarse, and disagree with each other by ~3 °C on the planet's absolute temperature. The sensitivity range stayed at 1.5–4.5 °C from 1979 until 2021. And a projected 3% GDP loss by 2100 works out to about two years of lost growth.</li>
+<li><b>Best critique:</b> he picks the record that favours his point (e.g. one sea-level dataset, burned area including farm fires). He ignores the physics-based projections that matter for the future. And he treats uncertainty as reassuring, when a wide range with a fat tail means <em>more</em> risk. Several of his points have also been overtaken since 2021: AR6 narrowed sensitivity to 2.5–4 °C and detected more extreme-event trends.</li>
+<li><b>Modelling verdict:</b> climate models have a real track record on <em>global</em> temperature (14 of 17 past projections were consistent with observations once forcing is accounted for).<sup><a href="#s12">12</a></sup> They are weak on regional rainfall and on timing, and poor at linking specific events to climate change. Even so, they beat macro-economic forecasting, which missed 148 of 153 recessions a year ahead.<sup><a href="#s30">30</a></sup> The models are anchored in conservation laws, and the climate doesn't react to forecasts about it the way an economy does.</li>
+</ul>
+</div>
+
+<nav class="toc reveal" aria-label="Table of contents"><b>Contents</b>
+<ol>
+<li><a href="#about">What the book is about</a></li>
+<li><a href="#why">Why it was written</a></li>
+<li><a href="#args">Key arguments &amp; reasoning</a></li>
+<li><a href="#subtle">The subtle, genuinely insightful ideas</a></li>
+<li><a href="#figs">Key figures, animated, and how robust each is</a></li>
+<li><a href="#critics">Steelmanning the critics</a></li>
+<li><a href="#models">Climate science as climate <em>modelling</em></a></li>
+<li><a href="#gloss">Glossary</a></li>
+<li><a href="#sources">Sources</a></li>
+</ol>
+<div class="legend" style="margin-top:10px"><span><i style="background:var(--bookline)"></i>Koonin's argument / verified quote</span><span><i style="background:var(--critline)"></i>Critics</span><span><i style="background:var(--exline)"></i>Concrete example (added)</span><span><i style="background:var(--illline)"></i>Illustrative, not data</span></div>
+</nav>
+
+<!-- 1 -->
+<section id="about" class="reveal">
+<h2><span class="n">1</span>What the book is about</h2>
+<p><em>Unsettled: What Climate Science Tells Us, What It Doesn't, and Why It Matters</em> is a book for general readers. It examines the gap between climate <em>research</em> and the climate <em>story</em> that reaches the public. The publisher's description puts the problem as "the long game of telephone from research to reports to the popular media," which it calls "corrupted by misunderstanding and misinformation."<sup><a href="#s2">2</a></sup></p>
+<p>It roughly splits in two. The <b>science half</b> covers the energy balance, what models can and can't do, temperature records, heat waves, hurricanes, sea level, and other extremes. The <b>response half</b> covers economic impacts, why deep decarbonisation is hard, and the case for adaptation, plus geoengineering "if necessary."<sup><a href="#s2">2</a></sup> The June 2024 <b>updated and expanded edition</b> adds a new introduction. It also covers three more years of data, alternatives to "net zero," global energy inequality, and the energy crisis that followed the war in Ukraine.<sup><a href="#s1">1</a></sup></p>
+<div class="box book"><span class="lbl">What Koonin does <em>not</em> claim</span>He doesn't deny warming or human influence. In his 2014 WSJ essay he wrote that "there is little doubt in the scientific community that continually growing amounts of greenhouse gases in the atmosphere, due largely to carbon-dioxide emissions from the conventional use of fossil fuels, are influencing the climate."<sup><a href="#s3">3</a></sup> His argument is about <em>how much, how fast, how well we can know it, and what to do about it</em>.</div>
+<h3>Who is Koonin?</h3>
+<div class="grid2">
+<div class="card"><h4>Career</h4>He was a Caltech theoretical physics professor for almost three decades, and Caltech's Provost for nine of those years. He was BP's Chief Scientist from 2004 and US DOE Under Secretary for Science from May 2009 to November 2011. From 2012 he was at NYU (Stern / Center for Urban Science and Progress).<sup><a href="#s5">5</a></sup></div>
+<div class="card"><h4>The road to the book</h4>In January 2014 he chaired an American Physical Society workshop to review the APS climate statement. Its panel included three mainstream scientists and three well-known dissenters: Judith Curry, Richard Lindzen and John Christy.<sup><a href="#s4">4</a>,<a href="#s7">7</a></sup> Eight months later he published "Climate Science Is Not Settled" in the <em>Wall Street Journal</em> (Sept 19, 2014).<sup><a href="#s3">3</a></sup> The book grew out of that essay.</div>
+</div>
+</section>
+
+<!-- 2 -->
+<section id="why" class="reveal">
+<h2><span class="n">2</span>Why it was written</h2>
+<p><b>Stated motive: informed choices need honest uncertainty.</b> In 2014 Koonin framed the policy question as more than "is it changing?" or "are humans influencing it?":</p>
+<blockquote>"Rather, the crucial, unsettled scientific question for policy is, 'How will the climate change over the next century under both natural and human influences?'"<cite>Koonin, WSJ, Sept 19, 2014<sup><a href="#s3">3</a></sup></cite></blockquote>
+<p>He thinks the slogan "the science is settled" shuts down exactly that discussion. In the book he separates the research literature, which is full of error bars, caveats and low-confidence findings, from the simplified public version he calls <b>"The Science"</b> (capitalised). That version is a fixed message about catastrophe and urgency that gets attached to the authority of science.</p>
+
+<div class="fig reveal" id="fig-telephone">
+<h4>Diagram: the "telephone game" from research to headline</h4>
+<svg viewBox="0 0 800 210" role="img" aria-label="Four stages from research papers to assessment report body to summary for policymakers to media headlines, with nuance being lost at each stage">
+<g class="fade">
+<rect x="10" y="40" width="170" height="90" rx="12" fill="var(--book)" stroke="var(--bookline)"/><text x="95" y="72" text-anchor="middle" font-weight="700">Research papers</text><text x="95" y="96" text-anchor="middle" class="m" font-size="13">error bars, caveats,</text><text x="95" y="114" text-anchor="middle" class="m" font-size="13">"low confidence"</text>
+<rect x="215" y="40" width="170" height="90" rx="12" fill="var(--book)" stroke="var(--bookline)"/><text x="300" y="72" text-anchor="middle" font-weight="700">Report body</text><text x="300" y="96" text-anchor="middle" class="m" font-size="13">thousands of pages,</text><text x="300" y="114" text-anchor="middle" class="m" font-size="13">calibrated language</text>
+<rect x="420" y="40" width="170" height="90" rx="12" fill="var(--ill)" stroke="var(--illline)"/><text x="505" y="72" text-anchor="middle" font-weight="700">Summary (SPM)</text><text x="505" y="96" text-anchor="middle" class="m" font-size="13">government-approved</text><text x="505" y="114" text-anchor="middle" class="m" font-size="13">line by line</text>
+<rect x="625" y="40" width="165" height="90" rx="12" fill="var(--crit)" stroke="var(--critline)"/><text x="707" y="72" text-anchor="middle" font-weight="700">Headlines</text><text x="707" y="96" text-anchor="middle" class="m" font-size="13">"unprecedented",</text><text x="707" y="114" text-anchor="middle" class="m" font-size="13">"catastrophe"</text>
+</g>
+<g stroke="var(--mute)" stroke-width="2" fill="none"><path class="draw" style="--len:40" d="M180 85 H213"/><path class="draw" style="--len:40" d="M385 85 H418"/><path class="draw" style="--len:40" d="M590 85 H623"/></g>
+<g class="fade"><text x="400" y="170" text-anchor="middle" class="m" font-size="13">Koonin's claim: nuance (and a number's error bar) is lost at each hand-off ⟶</text>
+<rect x="60" y="182" width="680" height="10" rx="5" fill="var(--line)"/><rect class="grow" x="60" y="182" width="680" height="10" rx="5" fill="url(#gradLoss)"/></g>
+<defs><linearGradient id="gradLoss"><stop offset="0" stop-color="var(--bookline)"/><stop offset="1" stop-color="var(--critline)"/></linearGradient></defs>
+</svg>
+<p class="cap">A diagram of Koonin's argument, not data. SPMs really are approved line by line in plenary sessions with government delegates. The authors sign off that the text matches the underlying report, but the wording is negotiated.</p>
+</div>
+
+<p><b>Summaries vs. body.</b> Koonin's main method is to set statements from the Summary for Policymakers or the US National Climate Assessment beside the more cautious tables and chapter text underneath. One example from his economic chapter: the 2018 National Climate Assessment's key message warned of losses of "hundreds of billions of dollars" in some sectors. Its own end-of-chapter figure showed a US GDP impact of about 4% at a very large +5 °C warming by 2090.<sup><a href="#s5">5</a></sup></p>
+<div class="box ex"><span class="lbl">Concrete example: the hurricane case</span>AR5 (2013) said there was <em>low confidence</em> in long-term (centennial) changes in tropical cyclone activity. The 2017 US Climate Science Special Report highlighted an upward trend in North Atlantic activity <em>since the 1970s</em>. Koonin's point is that the start date matters: the 1970s were a quiet period, and longer records don't show a clear trend. His critics answer that the newer post-1970s satellite-era record is the reliable one, and that intensity rather than frequency is where the signal shows up.<sup><a href="#s6">6</a>,<a href="#s9">9</a>,<a href="#s11">11</a></sup></div>
+<p><b>Personal motive.</b> Koonin says speaking openly about uncertainty felt like breaking a "code of silence" in the field. Boslough quotes him comparing it to the Mafia's omertà, and criticises that language as biased.<sup><a href="#s7">7</a></sup> Koonin's defenders say the hostile response to the book only proved his point.<sup><a href="#s42">42</a></sup></p>
+</section>
+<!-- 3 -->
+<section id="args" class="reveal">
+<h2><span class="n">3</span>Key arguments and the reasoning behind them</h2>
+<p>These are Koonin's arguments as he makes them. Section 6 gives the strongest rebuttals. All claim summaries are paraphrases unless marked as quotes.</p>
+<div class="tablewrap"><table>
+<thead><tr><th>#</th><th>Claim</th><th>Reasoning</th></tr></thead>
+<tbody>
+<tr><td>1</td><td><b>Human influence is small relative to the system.</b></td><td>Human radiative forcing (~2.7 W/m² by 2019 per AR6) is around 1% of the ~340 W/m² of sunlight arriving at the top of the atmosphere and the hundreds of W/m² moving between surface and air.<sup><a href="#s15">15</a></sup> A small nudge on a large, chaotic, naturally variable system is hard to detect and model. In 2014 he wrote that today's human impact "appears to be comparable to the intrinsic, natural variability of the climate system itself."<sup><a href="#s3">3</a></sup></td></tr>
+<tr><td>2</td><td><b>Models disagree and are tuned.</b></td><td>Dozens of models disagree on regional change and even on the planet's absolute temperature (by ~3 °C).<sup><a href="#s22">22</a></sup> Their free parameters are adjusted so they reproduce observations, including the 20th-century record.<sup><a href="#s23">23</a></sup> So matching the past is partly built in and isn't independent evidence.</td></tr>
+<tr><td>3</td><td><b>The past isn't reproduced well.</b></td><td>Temperatures fell from about 1940 to 1970 despite rising emissions. Koonin says models struggle with the early-20th-century warming (1910–1940) and the mid-century plateau. The publisher's blurb says models "aren't able to accurately describe the climate of the past."<sup><a href="#s2">2</a></sup></td></tr>
+<tr><td>4</td><td><b>Climate sensitivity hasn't narrowed.</b></td><td>From the 1979 Charney report through AR5 (2013), the likely ECS range stayed at about 1.5–4.5 °C despite enormous gains in computing.<sup><a href="#s16">16</a></sup> The newest CMIP6 models spread even <em>wider</em>, with some above 5 °C.<sup><a href="#s14">14</a></sup></td></tr>
+<tr><td>5</td><td><b>Many extreme-event trends aren't detectable.</b></td><td>The IPCC's own tables give low confidence or no emergence for long-term trends in hurricane frequency, floods and hydrological drought.<sup><a href="#s18">18</a>,<a href="#s19">19</a></sup> Headlines that blame each disaster on climate change go beyond the assessments.</td></tr>
+<tr><td>6</td><td><b>US heat waves peaked in the 1930s.</b></td><td>EPA's heat-wave index is dominated by the Dust Bowl decade. US record highs haven't risen the way public messaging implies, and reports that start their charts in 1960 hide this.<sup><a href="#s11">11</a>,<a href="#s25">25</a></sup></td></tr>
+<tr><td>7</td><td><b>Sea-level rise isn't clearly accelerating beyond past variability.</b></td><td>AR5 said rates "likely" similar to 1993–2010's 3.2 mm/yr occurred between 1920 and 1950.<sup><a href="#s20">20</a></sup> If similar rates happened when human forcing was small, attributing today's rate is harder. Koonin's WSJ-review version adds that Greenland's ice "isn't shrinking any more rapidly today than it was eighty years ago."<sup><a href="#s10">10</a></sup></td></tr>
+<tr><td>8</td><td><b>Economic impacts are modest.</b></td><td>AR5 compiled estimates of ≤3% of global GDP lost by 2100 at up to ~3 °C. Koonin converts that to about 0.04 percentage points of annual growth. In his words, the UN report "says that the economic impact of human-induced climate change is negligible, at most a bump in the road."<sup><a href="#s5">5</a></sup></td></tr>
+<tr><td>9</td><td><b>Summaries and media amplify.</b></td><td>The SPM, the National Climate Assessment key messages, and especially press releases choose framings (start dates, worst-case scenarios such as RCP8.5) that make things sound scarier than the body supports.<sup><a href="#s5">5</a></sup></td></tr>
+<tr><td>10</td><td><b>Decarbonisation is very hard, so adaptation matters.</b></td><td>Energy demand in the developing world is rising fast, fossil fuels supply most energy, and CO₂ persists for centuries. Rapid net zero is unrealistic, so societies should invest in adaptation, and consider geoengineering if necessary.<sup><a href="#s1">1</a>,<a href="#s2">2</a></sup></td></tr>
+</tbody></table></div>
+</section>
+
+<!-- 4 -->
+<section id="subtle" class="reveal">
+<h2><span class="n">4</span>The subtle, genuinely insightful ideas</h2>
+<p>Whatever you think of his conclusions, several of Koonin's points are true and under-appreciated. Many critics concede them (the <em>American Journal of Physics</em> review: "On these points, and others like them, Koonin is largely correct").<sup><a href="#s6">6</a></sup> These are worth keeping even if you reject the book's overall message.</p>
+
+<h3>4.1 Detection vs. attribution: two different questions</h3>
+<p><b>Detection</b> asks whether a change is statistically distinguishable from natural variability. <b>Attribution</b> asks how much of a detected change is caused by humans. You can't attribute what you haven't detected, but headlines often jump straight to attribution. For noisy, rare events like hurricanes, floods and droughts, the signal-to-noise ratio is low. Detection can take decades of good data, and good data often starts only in the satellite era (~1979).</p>
+<div class="box ex"><span class="lbl">Concrete example</span>A coin that lands heads 55% of the time looks fair after 20 flips (11 heads is ordinary). To detect the bias at 95% confidence you need roughly 400 flips. Category 4–5 Atlantic landfalls happen a few times a decade, so a real change in their rate can exist for a long time before it can be detected. "No detected trend" and "no effect" are <em>not</em> the same statement. Critics use exactly this point against Koonin.</div>
+
+<h3>4.2 A 1% perturbation in a chaotic system</h3>
+<p>Absorbed sunlight (~240 W/m²) and emitted heat are almost perfectly balanced. The human nudge (~2.7 W/m²) is a little over 1% of absorbed sunlight, and the current imbalance it produces is under 1 W/m².<sup><a href="#s15">15</a></sup> To model the response you have to get the <em>difference</em> between two large numbers right. Clouds alone reflect tens of W/m², so a small fractional error in cloud cover is as big as the whole human signal. This is the most physically interesting idea in the book.</p>
+
+<h3>4.3 Grid cells and parameterisation</h3>
+<p>Global models divide the planet into cells typically ~100 km or more across. Clouds, thunderstorms and turbulence happen on scales from metres to a few km, far below a cell. The models can't simulate them. They <em>parameterise</em> them with simplified rules that have adjustable coefficients. That's where tuning comes in, and it's why cloud feedback is the largest source of spread in climate sensitivity.<sup><a href="#s6">6</a>,<a href="#s15">15</a></sup></p>
+
+<h3>4.4 Tuning, and why matching the 20th century proves less than it seems</h3>
+<p>Modellers openly adjust parameters, mainly to get the top-of-atmosphere energy balance right and sometimes with the 20th-century warming in view.<sup><a href="#s22">22</a>,<a href="#s23">23</a></sup> If a model was tuned to the 20th century, matching the 20th century is a fit to data it has already seen, not a prediction of something new. Hourdin et al. (2017) urge modelling centres to document their tuning targets for exactly this reason.<sup><a href="#s23">23</a></sup> A sharper version of the point: models with quite different sensitivities can all match the historical record because their aerosol forcing differs. Aerosol cooling can cancel out some of the greenhouse warming.</p>
+
+<h3>4.5 "Ensembles of opportunity"</h3>
+<p>The CMIP ensemble isn't a designed random sample of possible models. It's whatever models the world's modelling centres chose to submit, and many of them share code and ancestry. Statisticians call this an <b>ensemble of opportunity</b>.<sup><a href="#s24">24</a></sup> The spread across the ensemble isn't a true probability distribution, and averaging models that share errors doesn't cancel those errors out. This is why AR6 stopped simply taking the CMIP6 average and built "assessed" warming from several lines of evidence instead.<sup><a href="#s14">14</a></sup></p>
+
+<h3>4.6 Forty-two years of the same sensitivity range</h3>
+<p>The Charney report (1979) said 3 °C ± 1.5 °C. AR5 (2013) said likely 1.5–4.5 °C and gave no best estimate.<sup><a href="#s16">16</a>,<a href="#s15">15</a></sup> No other headline number in modern physics stayed this uncertain for that long. It shows the hard part (feedbacks, especially clouds) wasn't solved by more computing power. AR6 <em>did</em> finally narrow it, to likely 2.5–4 °C, but mostly by combining paleoclimate, historical observations and process studies, not by running better models (Fig. 5.3).<sup><a href="#s14">14</a>,<a href="#s15">15</a></sup></p>
+
+<h3>4.7 Percent of GDP versus growth</h3>
+<p>A "3% of GDP loss by 2100" sounds large. But if the economy grows ~2%/yr, it will be several times bigger by then, and 3% is roughly a year or two of growth.<sup><a href="#s5">5</a></sup> Comparing the damage to the growth rate is a useful sanity check that headlines rarely do (Fig. 5.7). Its weakness is that the result is only as good as the damage function behind it, as §6 shows.</p>
+
+<h3>4.8 The language of assessments</h3>
+<p>The IPCC uses calibrated terms. <em>Likely</em> means ≥66% probability, <em>very likely</em> ≥90%, <em>virtually certain</em> ≥99%. Confidence (low, medium, high) is a separate scale for how strong the evidence and agreement are.<sup><a href="#s17">17</a></sup> The subtle point is that these words are precise inside the reports but ambiguous outside them. "Likely" reads as near-certain in a headline. "Low confidence in a trend" gets read as "no effect" by sceptics or ignored by advocates. And the SPM's choice of which findings to headline is itself a judgement call.</p>
+<div class="fig reveal"><h4>IPCC likelihood scale</h4>
+<svg viewBox="0 0 800 110" role="img" aria-label="IPCC likelihood scale from exceptionally unlikely to virtually certain">
+<rect x="20" y="40" width="760" height="22" rx="11" fill="var(--line)"/>
+<rect class="grow" x="20" y="40" width="760" height="22" rx="11" fill="url(#gl)"/>
+<defs><linearGradient id="gl"><stop offset="0" stop-color="#b23b3b"/><stop offset=".5" stop-color="#b7791f"/><stop offset="1" stop-color="#2e7d4f"/></linearGradient></defs>
+<g font-size="12" class="fade">
+<text x="27" y="30">0–1% exceptionally unlikely</text><text x="20" y="84">0–10% very unlikely</text>
+<text x="300" y="84">33–66% about as likely as not</text>
+<text x="520" y="30">≥66% likely</text><text x="620" y="84">≥90% very likely</text><text x="640" y="104">≥99% virtually certain</text>
+</g></svg>
+<p class="cap">Source: IPCC AR6 calibrated uncertainty language.<sup><a href="#s17">17</a></sup></p></div>
+</section>
+<!-- 5 -->
+<section id="figs" class="reveal">
+<h2><span class="n">5</span>Key figures, animated, with what each one tells you and how much to trust it</h2>
+<p>Each chart is tagged <span class="pill p-real">REAL DATA</span> (values taken from the cited source) or <span class="pill p-ill">ILLUSTRATIVE</span> (shape only, no real values). Each one ends with a <b>robustness</b> note in IPCC terms where available.</p>
+
+<div class="fig reveal" id="f-energy">
+<h4>5.1 Earth's energy flows vs. the human nudge <span class="pill p-real">REAL DATA (rounded)</span></h4>
+<div id="energy"></div>
+<p class="cap">Global-mean flows in W/m², rounded from IPCC AR6 WGI Fig. 7.2. Human effective radiative forcing is 2.72 W/m² for 2019 vs 1750 (very likely range 1.96–3.48).<sup><a href="#s15">15</a></sup></p>
+<div class="story"><div><b>Story</b>The human signal (red) is a sliver next to the natural flows. Koonin's point is that predicting the response means getting small differences between huge numbers right.</div><div><b>How robust</b><span class="pill p-hi">HIGH</span> The flows and forcing are well measured (forcing uncertainty is about ±30%). The ~1% ratio is correct. The <em>inference</em> that small means unimportant is not: 2.7 W/m² sustained over the whole planet is a large amount of energy, and it's now measured as a growing imbalance (~0.5–1 W/m²).<sup><a href="#s15">15</a></sup></div></div>
+</div>
+
+<div class="fig reveal" id="f-abs">
+<h4>5.2 Models agree on warming but disagree on the planet's actual temperature <span class="pill p-ill">ILLUSTRATIVE</span></h4>
+<div id="abstemp"></div>
+<p class="cap">The ~3 K spread in absolute global mean temperature across CMIP3/CMIP5 models (most models running cold) is from Mauritsen et al. (2012).<sup><a href="#s22">22</a></sup> The individual dot positions and curves are <b>illustrative, not real model values</b>.</p>
+<div class="story"><div><b>Story</b>Models are usually shown as <em>anomalies</em> (change from their own baseline), so their lines bunch together. In absolute degrees they sit up to ~3 °C apart. That's bigger than all the warming observed so far (~1.1 °C by 2011–2020).<sup><a href="#s17">17</a></sup></div><div><b>How robust</b><span class="pill p-hi">HIGH</span> that the spread exists, per the modellers themselves. Its <em>importance</em> is disputed. Ice, snow and cloud processes depend on absolute temperature, which supports Koonin. But many global responses appear fairly insensitive to the bias, which supports the modellers.</div></div>
+</div>
+
+<div class="fig reveal" id="f-ecs">
+<h4>5.3 Climate sensitivity (ECS): four decades of assessed ranges <span class="pill p-real">REAL DATA</span></h4>
+<div id="ecs"></div>
+<p class="cap">Likely ranges (bars) and best estimates (dots). Charney 1979: 3 ± 1.5 °C. AR4 2007: likely 2–4.5 °C, best 3. AR5 2013: likely 1.5–4.5 °C, no best estimate. AR6 2021: likely 2.5–4 °C, very likely 2–5 °C (thin line), best 3. CMIP5 models topped out at 4.7 °C. About one in five CMIP6 models have ECS ≥5 °C (one count: 10 of 55).<sup><a href="#s14">14</a>,<a href="#s15">15</a>,<a href="#s16">16</a>,<a href="#s44">44</a></sup></p>
+<div class="story"><div><b>Story</b>The range stayed stuck for 34 years, which was Koonin's strongest point when he wrote. AR6 then narrowed it, just after the book's April 2021 release, by down-weighting what models say on their own.</div><div><b>How robust</b><span class="pill p-med">MEDIUM-HIGH</span> AR6's "likely" means ≥66%, so a one-in-three chance remains that ECS lies outside 2.5–4 °C. The tail above 4 °C is the main driver of risk.</div></div>
+</div>
+
+<div class="fig reveal" id="f-hw">
+<h4>5.4 US Annual Heat Wave Index, 1895–2020 <span class="pill p-real">REAL DATA</span></h4>
+<div class="legend" id="hwbtns"><button class="btn" aria-pressed="true" data-from="1895">From 1895</button><button class="btn" aria-pressed="false" data-from="1960">From 1960</button></div>
+<div id="heat"></div>
+<p class="cap">EPA Climate Change Indicators, Fig. 3 (data: Kunkel 2021). A heat wave is ≥4 days above the local 1-in-10-year threshold, and the index combines frequency and area. 1936 = 1.281.<sup><a href="#s25">25</a></sup> Toggle the start year to see Koonin's "start date" argument for yourself.</p>
+<div class="story"><div><b>Story</b>From 1895, the 1930s Dust Bowl towers over everything. From 1960, a modest rise appears. Both charts use the same data.</div><div><b>How robust</b><span class="pill p-hi">HIGH</span> that the 1930s dominate this particular index for the contiguous US. But it covers just ~2% of Earth's surface. The Dust Bowl heat was amplified by drought and the drying of over-ploughed land. Other EPA indicators (urban heat waves since the 1960s, warm nights) and AR6's <em>global</em> finding ("virtually certain" increase in hot extremes since the 1950s) point the other way.<sup><a href="#s17">17</a>,<a href="#s26">26</a></sup></div></div>
+</div>
+
+<div class="fig reveal" id="f-sl">
+<h4>5.5 Rate of global sea-level rise <span class="pill p-real">REAL DATA</span></h4>
+<div id="sea"></div>
+<p class="cap">AR6 average rates: 1.3 mm/yr (1901–1971), 1.9 (1971–2006), 3.7 (2006–2018).<sup><a href="#s21">21</a></sup> The striped bar shows AR5's statement that rates similar to 1993–2010's 3.2 mm/yr "likely" occurred between 1920 and 1950.<sup><a href="#s20">20</a></sup> That bar shows a statement, not a measured average.</p>
+<div class="story"><div><b>Story</b>Long-period averages show clear acceleration (rates nearly tripled). Koonin's argument rests on <em>decadal</em> wiggles: individual decades in 1920–1950 may have run fast too.</div><div><b>How robust</b><span class="pill p-hi">HIGH</span> for acceleration over the century. AR6 reports the rate has increased and that human influence was very likely the main driver since at least 1971. <span class="pill p-med">MEDIUM/LOW</span> for 1920–1950 decadal rates, which come from sparse tide gauges. Hausfather notes that one dataset shows the ambiguity and four others show clear modern acceleration.<sup><a href="#s10">10</a></sup></div></div>
+</div>
+
+<div class="fig reveal" id="f-ext">
+<h4>5.6 Extreme events: what's detected, what's attributed <span class="pill p-real">ASSESSMENT LANGUAGE</span></h4>
+<div class="tablewrap"><table>
+<thead><tr><th>Event type</th><th>Observed change (AR6)</th><th>Human contribution</th><th>Koonin's emphasis</th></tr></thead>
+<tbody>
+<tr><td>Hot extremes / heat waves</td><td><span class="pill p-hi">virtually certain</span> more frequent and intense over most land since the 1950s</td><td>Human-induced change is the main driver</td><td>US-only 1930s record (Fig. 5.4)</td></tr>
+<tr><td>Heavy precipitation</td><td><span class="pill p-hi">high confidence</span> increase over most land with enough data</td><td><span class="pill p-hi">likely</span> main driver</td><td>Noisy regionally</td></tr>
+<tr><td>Agricultural / ecological drought</td><td><span class="pill p-med">medium confidence</span> increase in some regions</td><td>Contributed in some regions</td><td>No clear global trend</td></tr>
+<tr><td>Tropical cyclones (all categories)</td><td><span class="pill p-lo">low confidence</span> in long-term frequency trends</td><td>Not detected for frequency</td><td>Correct per AR6</td></tr>
+<tr><td>Major TCs (Cat 3–5) proportion</td><td><span class="pill p-hi">likely</span> increased over last four decades</td><td>Not explained by internal variability alone</td><td>Downplayed</td></tr>
+<tr><td>River floods</td><td><span class="pill p-lo">low confidence</span> in global peak-flow trends; not emerged (Table 12.12)</td><td>Low confidence</td><td>Correct per AR6</td></tr>
+</tbody></table></div>
+<p class="cap">Paraphrased from IPCC AR6 WGI SPM A.3, Ch. 11 and Table 12.12.<sup><a href="#s17">17</a>,<a href="#s18">18</a>,<a href="#s19">19</a>,<a href="#s46">46</a></sup> Wording is condensed, so check the source for exact phrasing.</p>
+<div class="story"><div><b>Story</b>The IPCC's own tables back Koonin on <em>hurricane frequency</em> and <em>floods</em>. They contradict him on <em>heat</em>, <em>heavy rain</em> and <em>hurricane intensity</em>. Both sides can honestly cite "the IPCC."</div><div><b>How robust</b>Varies by row, as shown by the colour of each pill. This is the clearest illustration of the detection–attribution asymmetry in §4.1.</div></div>
+</div>
+
+<div class="fig reveal" id="f-gdp">
+<h4>5.7 Koonin's GDP arithmetic and the spread of damage estimates <span class="pill p-real">COMPUTED FROM STATED ASSUMPTIONS</span></h4>
+<div id="gdp"></div>
+<p class="cap">Top: a recreation of Koonin's Fig. 9.6 from his stated assumptions: US GDP of $20T growing 2%/yr for 70 years, with 4% and 10% climate impacts in 2090 phased in linearly.<sup><a href="#s5">5</a></sup> The curves are computed, not digitised from the book.</p>
+<div id="dmg"></div>
+<p class="cap">Bottom: published damage estimates are <b>not like-for-like</b> (different years, warming levels and methods). AR5 WGII: 0.2–2% of income at ~2 °C additional warming.<sup><a href="#s45">45</a></sup> NCA2018 (as cited by Koonin): ~4% US GDP at +5 °C by 2090.<sup><a href="#s5">5</a></sup> Burke, Hsiang &amp; Miguel 2015: ~23% global income by 2100 under unmitigated warming.<sup><a href="#s35">35</a></sup> Kotz et al. 2024: 19% by 2050, <b>retracted Dec 2025</b>, with authors' revised figure 17% (range 6–31%).<sup><a href="#s33">33</a>,<a href="#s34">34</a></sup></p>
+<div class="story"><div><b>Story</b>If you accept the damage function, Koonin's arithmetic is right: 4% by 2090 is about two years of growth. The bottom chart shows that published damage estimates differ by about <em>tenfold</em>.</div><div><b>How robust</b><span class="pill p-lo">LOW</span> for every damage number. AR5 itself said estimates above 3 °C were scarce. The disagreement between them is much larger than any one estimate's error bar, a point Dessler makes against relying on them.<sup><a href="#s27">27</a>,<a href="#s37">37</a></sup></div></div>
+</div>
+</section>
+<!-- 6 -->
+<section id="critics" class="reveal">
+<h2><span class="n">6</span>Steelmanning the critics</h2>
+<p>This is the strongest fair version of the case against <em>Unsettled</em>, drawn from climate scientists' reviews. Insults and credential-policing are left out unless they bear on an argument.</p>
+
+<div class="box crit"><span class="lbl">1. Selective data: true facts, misleading picture</span>Hausfather on the WSJ review of the book: "a mix of factually correct, correct but misleading, and inaccurate statements."<sup><a href="#s10">10</a></sup> His examples: citing one sea-level dataset and ignoring four that show clear acceleration; citing declining global <em>burned area</em>, which is driven by fewer deliberately set agricultural fires, while wildfires increase in many regions; and Greenland. NSIDC's Twila Moon notes average ice loss in 2003–2010 was about 2.5× the 1900–2003 rate.<sup><a href="#s10">10</a></sup> Every fact can be accurate and the selection still misleading.</div>
+
+<div class="box crit"><span class="lbl">2. "No detected trend" is not "no effect"</span>Detection limits (§4.1) cut both ways. A low-confidence trend in noisy data is exactly what you'd expect early in a real change. The AJP reviewer, who agrees with Koonin on many observational points, faults him for ignoring physics-based projections. Those "tell us unanimously that heat waves will increase, sea level rise will accelerate, and hurricanes will intensify on a warmer planet."<sup><a href="#s6">6</a></sup> Physical reasoning (warmer air holds ~7% more water vapour per °C) is evidence too, not just trend lines.</div>
+
+<div class="box crit"><span class="lbl">3. Uncertainty is not reassurance</span>Boslough: Koonin seems "unaware of the fact that increased uncertainty means increased risks." Sensitivity is a right-skewed distribution "with a long high-sensitivity tail that we cannot discount with certainty."<sup><a href="#s7">7</a></sup> In risk management, expected loss is probability × consequence summed over outcomes. If damages grow faster than linearly with warming, a wider range <em>raises</em> the expected cost. Weitzman's "dismal theorem" argued that fat tails can dominate cost–benefit analysis.<sup><a href="#s36">36</a></sup></div>
+
+<div class="box crit"><span class="lbl">4. Models have a forecasting track record</span>Koonin stresses tuning and hindcasts. But models published <em>before</em> the warming happened projected it well: 10 of 17 projections from 1970–2007 matched raw observations, and 14 of 17 did after correcting for forcing that differed from what was assumed, with no systematic bias towards running hot or cold.<sup><a href="#s12">12</a></sup> You can't tune a 1988 model to 2017 data. That's an out-of-sample test.</div>
+
+<div class="box crit"><span class="lbl">5. The field already fixed the problems he highlights</span>The "hot model" issue was recognised by modellers themselves (Hausfather, Marvel, Schmidt et al., <em>Nature</em> 2022). AR6 didn't use the raw CMIP6 mean. It assessed warming from multiple lines of evidence and narrowed ECS to 2.5–4 °C.<sup><a href="#s14">14</a></sup> AR6 also upgraded detection for heat, heavy rain and the share of major tropical cyclones.<sup><a href="#s17">17</a></sup> Yohe argues that uncertainty has "narrowed or become better understood" with each assessment.<sup><a href="#s8">8</a></sup></div>
+
+<div class="box crit"><span class="lbl">6. The economics leans on the weakest model of all</span>Koonin is sceptical of climate models yet treats the AR5 economic damage estimates as reliable enough to call impacts "negligible." Dessler argues that climate-economics damage functions lack solid data or theory.<sup><a href="#s37">37</a></sup> Estimates since then run up to ~23% of income (Burke et al.).<sup><a href="#s35">35</a></sup> Global GDP averages also hide concentrated losses: even the 2018 review Koonin cites acknowledges "severe impacts on less developed countries."<sup><a href="#s5">5</a></sup> And GDP doesn't count lost ecosystems or lives well.</div>
+
+<div class="box crit"><span class="lbl">7. A strawman target and lopsided advisers</span>Boslough argues that "the science is settled" is rarely said by climate scientists themselves. He also says the 2014 APS workshop's 3 mainstream vs 3 contrarian panel lacked proportionate representation and amplified contrary opinions, and that the book's errors trace back to trusting those advisers.<sup><a href="#s7">7</a></sup> Koonin is a distinguished computational physicist, but he hasn't published primary climate research. Critics see that as a reason to check his readings of the literature carefully, not as a disqualification in itself.</div>
+
+<h3>Koonin's replies</h3>
+<p>Koonin answered Scientific American on Medium (they declined to publish it). He says the critics responded to a newspaper column rather than the book. He says Chapter 6 reviews hurricane research through 2020, including a 2019 eleven-expert assessment, and none of it claims detectable human influence on hurricanes.<sup><a href="#s11">11</a>,<a href="#s41">41</a></sup> And he says Chapter 8 doesn't portray sea level as "steady" but describes its decadal variability.<sup><a href="#s11">11</a></sup> He closes by paraphrasing Einstein: "If I were wrong, it wouldn't take a dozen scientists to disprove me — one would be sufficient."<sup><a href="#s11">11</a></sup> Defenders such as Reason argue that critics often conceded his facts while objecting to his framing.<sup><a href="#s42">42</a></sup></p>
+<div class="box ex"><span class="lbl">A fair scorecard</span>On narrow observational claims (US heat-wave index, hurricane frequency, flood trends, the stuck ECS range up to AR5, absolute-temperature bias), Koonin is mostly right, and mainstream reviewers say so.<sup><a href="#s6">6</a></sup> On the overall picture (that the risks are modest and urgency is overstated), he relies on selective records, discounts physics-based projections, and treats uncertainty as if it only cut one way.</div>
+</section>
+<!-- 7 -->
+<section id="models" class="reveal">
+<h2><span class="n">7</span>Climate science as climate <em>modelling</em></h2>
+<p><b>The framing:</b> much of "climate science" that reaches policy isn't like mathematics, where a proof is checkable, verifiable and reproducible forever. It's <em>modelling</em>, and a model is only as useful as its track record in predicting:</p>
+<div class="grid2">
+<div class="card"><h4>WHAT happens</h4>Which variables change, and in which direction (warmer, wetter, drier, more ice or less).</div>
+<div class="card"><h4>HOW MUCH</h4>The size of the change (degrees, millimetres, percent).</div>
+<div class="card"><h4>WHEN</h4>The timing and rate, including thresholds and tipping points.</div>
+<div class="card"><h4>WHY</h4>The causal story: which forcing produced which change.</div>
+</div>
+<p>This framing is largely <b>right</b>, and it's the most useful lens on the whole Koonin debate. The disputes are almost entirely about <em>model skill on particular dimensions at particular scales</em>. But it needs three refinements to be fully accurate:</p>
+<div class="box ex"><span class="lbl">Refinement 1: part of the foundation <em>is</em> lab-reproducible physics</span>CO₂ absorbs infrared radiation. Tyndall measured it in the lab in the 1850s, and the absorption lines are catalogued spectroscopy. The extra downward radiation from rising CO₂ has been <em>directly measured</em> at the surface: about 0.2 W/m² per decade at two US sites from 2000 to 2010 (Feldman et al. 2015).<sup><a href="#s40">40</a></sup> Conservation of energy, mass and momentum aren't up for debate either. The modelling uncertainty sits in the <em>feedbacks</em> (clouds, water vapour, ice) and in regional dynamics, not in the greenhouse effect itself.</div>
+<div class="box ex"><span class="lbl">Refinement 2: projections are conditional, not forecasts</span>A climate projection says: <em>if</em> emissions follow scenario X, the climate responds like Y. Most uncertainty in 2100 temperature comes from which emissions path humanity chooses, not from the physics.<sup><a href="#s14">14</a></sup> That's why Hausfather et al. score old models on warming <em>per unit of forcing</em>.<sup><a href="#s12">12</a></sup> It's a fair test of the physics, and it separates out human choices the modellers couldn't know.</div>
+<div class="box ex"><span class="lbl">Refinement 3: skill depends on scale</span>"Climate models" isn't one thing to grade. The same model can be excellent at the global annual mean and poor at July rainfall in Kenya. As the AJP reviewer puts it, "any model will be fit for some purposes and not for others."<sup><a href="#s6">6</a></sup> Overall pass/fail verdicts in either direction miss this.</div>
+
+<h3>7.1 Grading climate models on the four dimensions</h3>
+<div class="tablewrap"><table>
+<thead><tr><th>Dimension</th><th>Strongest evidence of skill</th><th>Strongest evidence of weakness</th><th>Grade</th></tr></thead>
+<tbody>
+<tr><td><b>What</b></td><td>Predicted the direction of many changes before they were observed: surface warming, stratospheric cooling, Arctic amplification, land warming faster than ocean, ocean heat uptake.</td><td>Regional precipitation: in some regions models disagree even on the <em>sign</em> of change (e.g. West Africa: most models project wetter, about a quarter drier).<sup><a href="#s43">43</a></sup></td><td><span class="pill p-hi">Good globally</span> <span class="pill p-lo">poor regionally (rain)</span></td></tr>
+<tr><td><b>How much</b></td><td>Global mean temperature: 14 of 17 projections from 1970–2007 consistent with observations once forcing is accounted for. Hansen 1988 ran warm mainly because its emissions scenario overestimated methane and CFCs.<sup><a href="#s12">12</a>,<a href="#s13">13</a></sup></td><td>ECS spread is still a factor of ~2 (likely 2.5–4 °C). About 20% of CMIP6 models have ECS ≥5 °C, and these do poorly on history.<sup><a href="#s14">14</a></sup> Absolute temperature is biased by up to ~3 K.<sup><a href="#s22">22</a></sup></td><td><span class="pill p-hi">Good (global T)</span> <span class="pill p-med">± factor ~1.6</span></td></tr>
+<tr><td><b>When</b></td><td>The steady warming rate (~0.2 °C/decade) has been well forecast.</td><td>Arctic sea ice: the observed September decline of 7.8%/decade (1953–2006) was ~3× the AR4 model mean (2.5%/decade). No AR4 model run matched it.<sup><a href="#s28">28</a>,<a href="#s29">29</a></sup> Timing of tipping points (ice sheets, AMOC) is deeply uncertain.</td><td><span class="pill p-med">Mixed</span></td></tr>
+<tr><td><b>Why</b></td><td>Attributing global warming since the mid-20th century to human activity is AR6's firmest conclusion ("unequivocal"). The fingerprints include the stratosphere cooling while the surface warms, which solar forcing would not cause.<sup><a href="#s17">17</a></sup></td><td>Attributing <em>individual events</em> or regional trends is weaker and often low-confidence (floods, tropical cyclone frequency).<sup><a href="#s19">19</a></sup> The models' own <em>why</em> (cloud feedback) is the largest source of disagreement.</td><td><span class="pill p-hi">Strong (global)</span> <span class="pill p-med">weak (events)</span></td></tr>
+</tbody></table></div>
+<p class="cap">Grades are this explainer's editorial judgement based on the cited evidence, not an official rating.</p>
+
+<h3>7.2 Economic modelling's track record</h3>
+<div class="box ex"><span class="lbl">Recessions</span>An, Jalles &amp; Loungani (IMF, 2018) studied GDP forecasts for 63 countries, 1992–2014. Forecasters missed 148 of 153 recessions as of April of the preceding year, and missed the magnitude "by a wide margin until the year is almost over." Private and official forecasts were "virtually identical; thus, both are equally good at missing recessions."<sup><a href="#s30">30</a>,<a href="#s31">31</a></sup></div>
+<div class="box ex"><span class="lbl">The Fed</span>The Federal Reserve's own benchmark of historical forecast errors puts the typical (RMS) error for real GDP growth at roughly 2 percentage points at longer horizons. That's about as large as normal growth itself. Unemployment errors also reach about 2 points.<sup><a href="#s32">32</a></sup> 2008 is the canonical miss: few mainstream models gave a financial-crisis recession any meaningful probability beforehand.</div>
+<div class="box ex"><span class="lbl">Structure</span>DSGE models, the mainstream macro workhorse, have been criticised from within the field. Paul Romer's "The Trouble with Macroeconomics" (2016) argued they rest on unverifiable identifying assumptions.<sup><a href="#s39">39</a></sup> The <b>Lucas critique</b> (1976) notes that relationships estimated from past data break down when policy changes, because people adapt.<sup><a href="#s38">38</a></sup></div>
+
+<h3>7.3 Why climate models have a structural advantage</h3>
+<div class="grid2">
+<div class="card"><h4>Conservation laws</h4>Energy, mass and momentum are conserved, and radiative transfer is known physics. That rules out most wrong answers before any tuning. Economics has accounting identities but no equivalent of the first law of thermodynamics for behaviour.</div>
+<div class="card"><h4>No reflexivity</h4>CO₂ molecules don't read IPCC reports. Markets react to forecasts: a predicted recession can trigger one, and a predicted crash gets priced in. Economic forecasts change what they forecast, and climate forecasts don't. (Only the emissions scenario is human and reflexive.)</div>
+<div class="card"><h4>Large-number averaging</h4>The global annual mean averages out a huge amount of chaotic weather, so the forced signal stands out. Recessions are rare, discrete turning points, and that's exactly what models handle worst.</div>
+<div class="card"><h4>Out-of-sample tests exist</h4>Old climate projections can be checked against decades of later data (Hausfather 2020). Macro has many vintage forecasts too, and their scores are what make the record look bad (Loungani).</div>
+</div>
+<div class="box ill"><span class="lbl">Where the comparison cuts against climate</span>Regional rainfall, extreme-event frequency and tipping-point timing are about as hard to predict as recessions: rare, nonlinear, threshold-driven. And the policy question ultimately runs through <b>integrated assessment models</b> such as Nordhaus's DICE, which bolt an economic damage function onto a simple climate model. Their output (the social cost of carbon, "optimal" warming) inherits <em>economics'</em> uncertainty on top of the climate uncertainty. That's Koonin's "doubly dismal" point,<sup><a href="#s5">5</a></sup> and Dessler's too, from the other side.<sup><a href="#s37">37</a></sup> The retraction of a high-profile 2024 damage paper shows how fragile this layer is.<sup><a href="#s33">33</a></sup></div>
+
+<div class="fig reveal" id="f-score">
+<h4>7.4 Scorecard: climate vs economic modelling on the four questions <span class="pill p-ill">EDITORIAL JUDGEMENT</span></h4>
+<div id="score"></div>
+<p class="cap">0–5 bars represent this explainer's qualitative assessment of the evidence above, not a measured statistic. Climate = global-scale physical models. Economics = macro forecasting models. "Why" for economics reflects contested causal identification (Romer, Lucas).</p>
+</div>
+
+<div class="fig reveal" id="f-horizon">
+<h4>7.5 Forecast horizon vs. skill <span class="pill p-ill">ILLUSTRATIVE / CONCEPTUAL</span></h4>
+<div id="horizon"></div>
+<p class="cap">The curve shapes are conceptual, not data. They encode documented facts: weather skill fades within roughly two weeks (chaos). Global-mean climate projections <em>regain</em> skill at multi-decade horizons because the forced signal outgrows the noise, as long as the scenario is right. Regional rainfall stays low. Macro forecasts have some skill a few quarters out but are close to no-skill for turning points a year ahead (Loungani).</p>
+</div>
+
+<h3>7.6 Bottom line</h3>
+<div class="box book" style="border-color:var(--accent2)"><span class="lbl">Where the framing is right</span>Climate science that informs policy is mostly modelling, and it should be judged by its predictions on what, how much, when and why. By that standard, regional, extreme-event and timing predictions are genuinely weak, and the 34 years of unchanged ECS range was a fair embarrassment. Treating model outputs as "settled" facts with the authority of mathematics is a category error.</div>
+<div class="box crit"><span class="lbl">Where it oversimplifies</span>The core (CO₂ forcing, energy conservation) is reproducible physics, not just modelling. Projections are conditional on emissions, so "the model was wrong" often means "the scenario differed." On the dimension that matters most for the global picture, <em>how much the planet warms per unit of forcing</em>, climate models have a better documented track record than almost any macro-economic model. And uncertainty means a wider range of outcomes, including worse ones.</div>
+</section>
+<section id="gloss" class="reveal">
+<h2><span class="n">8</span>Glossary</h2>
+<dl class="gloss">
+<dt>Radiative forcing (ERF)</dt><dd>A change in Earth's energy balance (W/m²) caused by an external driver such as CO₂, aerosols or the sun. Humans: ~2.7 W/m² since 1750.</dd>
+<dt>ECS: equilibrium climate sensitivity</dt><dd>The long-run warming after CO₂ doubles. AR6: likely 2.5–4 °C, best estimate 3 °C.</dd>
+<dt>TCR: transient climate response</dt><dd>Warming at the moment CO₂ doubles, under a 1%/yr increase. More relevant to this century, and better constrained.</dd>
+<dt>CMIP</dt><dd>The Coupled Model Intercomparison Project, the coordinated set of model runs (CMIP5, CMIP6) that the IPCC draws on.</dd>
+<dt>Parameterisation</dt><dd>A simplified rule standing in for processes smaller than a grid cell, such as clouds, convection and turbulence.</dd>
+<dt>Tuning</dt><dd>Adjusting uncertain parameters so a model reproduces chosen observations, such as the energy balance or past climate.</dd>
+<dt>Ensemble of opportunity</dt><dd>A collection of models gathered by availability rather than by design, so its spread isn't a true probability distribution.</dd>
+<dt>Detection / attribution</dt><dd>Detection: showing a change is beyond natural variability. Attribution: estimating how much of it is due to a specific cause.</dd>
+<dt>Anomaly</dt><dd>A departure from a baseline average. Models are usually compared as anomalies, which hides their absolute-temperature differences.</dd>
+<dt>SPM</dt><dd>Summary for Policymakers, the short IPCC summary approved line by line with governments.</dd>
+<dt>RCP / SSP scenarios</dt><dd>Assumed paths for emissions and socioeconomic development. RCP8.5 / SSP5-8.5 is a high-emissions case that critics on both sides now consider unlikely.</dd>
+<dt>Integrated assessment model (IAM)</dt><dd>A model linking an economy, emissions, simple climate physics and a damage function, e.g. Nordhaus's DICE.</dd>
+<dt>Damage function</dt><dd>The assumed relationship between warming and economic loss. It's the most uncertain part of an IAM.</dd>
+<dt>DSGE</dt><dd>Dynamic stochastic general equilibrium model, the standard central-bank macro model.</dd>
+<dt>Lucas critique</dt><dd>Relationships estimated from past data change when policy changes, because people respond.</dd>
+<dt>Reflexivity</dt><dd>When a forecast changes the outcome it forecasts. This is common in economics and absent in physical climate.</dd>
+</dl>
+</section>
+
+<section id="sources" class="reveal">
+<h2><span class="n">9</span>Sources</h2>
+<ol class="src">
+<li id="s1">BenBella Books, <a href="https://benbellabooks.com/shop/unsettled-updated-and-expanded-edition/">Unsettled (Updated and Expanded Edition)</a>, June 2024, plus <a href="https://www.simonandschuster.net/books/Unsettled-(Updated-and-Expanded-Edition)/Steven-E-Koonin/9781637745250">Simon &amp; Schuster listing</a>.</li>
+<li id="s2">Simon &amp; Schuster, <a href="https://www.simonandschuster.com/books/Unsettled/Steven-E-Koonin/9781950665792">Unsettled (2021 edition) description</a>.</li>
+<li id="s3">S. Koonin, <a href="https://www.wsj.com/articles/climate-science-is-not-settled-1411143565">"Climate Science Is Not Settled"</a>, Wall Street Journal, Sept 19, 2014 (<a href="https://www.stern.nyu.edu/experience-stern/faculty-research/climate-science-not-settled">NYU Stern copy</a>).</li>
+<li id="s4">Physics Today, <a href="https://physicstoday.aip.org/opinion/physicist-steve-koonin-impeaches-scientists-climate-consensus">"Physicist Steve Koonin impeaches scientists' climate consensus"</a>, 2014.</li>
+<li id="s5">S. Koonin, <a href="https://www.promarket.org/2021/08/11/unsettled-climate-change-economy-steve-koonin/">"Unsettled: What is the Economic Impact of Climate Change?"</a> (book excerpt and author bio), ProMarket, Aug 11, 2021.</li>
+<li id="s6"><a href="https://pubs.aip.org/aapt/ajp/article/91/9/753/2906599/Unsettled-What-Climate-Science-Tells-Us-What-It">Book review of Unsettled</a>, American Journal of Physics 91(9), 2023.</li>
+<li id="s7">M. Boslough, <a href="https://yaleclimateconnections.org/2021/05/a-critical-review-of-steven-koonins-unsettled/">"A critical review of Steven Koonin's 'Unsettled'"</a>, Yale Climate Connections, May 25, 2021.</li>
+<li id="s8">G. Yohe, <a href="https://www.scientificamerican.com/article/a-new-book-manages-to-get-climate-science-badly-wrong/">"A New Book Manages to Get Climate Science Badly Wrong"</a>, Scientific American, 2021.</li>
+<li id="s9">N. Oreskes et al., <a href="https://www.scientificamerican.com/article/that-obama-scientist-climate-skeptic-youve-been-hearing-about/">"That 'Obama Scientist' Climate Skeptic You've Been Hearing About…"</a>, Scientific American, 2021.</li>
+<li id="s10">Science Feedback (Climate Feedback), <a href="https://science.feedback.org/review/wall-street-journal-article-repeats-multiple-incorrect-and-misleading-claims-made-in-steven-koonins-new-book-unsettled-steven-koonin/">review of WSJ article on Unsettled</a> (Hausfather, Moon et al.), 2021.</li>
+<li id="s11">S. Koonin, <a href="https://steven-koonin.medium.com/my-response-to-a-scientific-american-hit-piece-7b5811141137">"My response to a Scientific American hit piece"</a>, Medium, Jun 3, 2021.</li>
+<li id="s12">Hausfather, Drake, Abbott &amp; Schmidt, <a href="https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2019GL085378">"Evaluating the Performance of Past Climate Model Projections"</a>, GRL 47, 2020. See also <a href="https://science.nasa.gov/earth/climate-change/study-confirms-climate-models-are-getting-future-warming-projections-right/">NASA summary</a>.</li>
+<li id="s13">Carbon Brief, <a href="https://www.carbonbrief.org/analysis-how-well-have-climate-models-projected-global-warming">"Analysis: How well have climate models projected global warming?"</a></li>
+<li id="s14">Hausfather, Marvel, Schmidt, Nielsen-Gammon &amp; Zelinka, <a href="https://www.nature.com/articles/d41586-022-01192-2">"Climate simulations: recognize the 'hot model' problem"</a>, Nature 605, 2022 (<a href="https://media.nature.com/original/magazine-assets/d41586-022-01192-2/d41586-022-01192-2.pdf">PDF</a>).</li>
+<li id="s15">IPCC AR6 WGI, <a href="https://www.ipcc.ch/report/ar6/wg1/downloads/report/IPCC_AR6_WGI_Chapter07.pdf">Chapter 7: Energy Budget, Feedbacks and Climate Sensitivity</a>, 2021.</li>
+<li id="s16">National Research Council, <a href="https://s3.documentcloud.org/documents/3483046/Charney-Report-1979.pdf">Carbon Dioxide and Climate: A Scientific Assessment (Charney Report)</a>, 1979.</li>
+<li id="s17">IPCC AR6 WGI, <a href="https://www.ipcc.ch/report/ar6/wg1/chapter/summary-for-policymakers/">Summary for Policymakers</a>, 2021.</li>
+<li id="s18">IPCC AR6 WGI, <a href="https://www.ipcc.ch/report/ar6/wg1/downloads/report/IPCC_AR6_WGI_Chapter12.pdf">Chapter 12 (incl. Table 12.12)</a>.</li>
+<li id="s19">IPCC AR6 WGI, <a href="https://www.ipcc.ch/report/ar6/wg1/downloads/report/IPCC_AR6_WGI_Chapter11.pdf">Chapter 11: Weather and Climate Extreme Events</a>.</li>
+<li id="s20">IPCC AR5 WGI, <a href="https://www.ipcc.ch/site/assets/uploads/2018/02/WG1AR5_SPM_FINAL.pdf">Summary for Policymakers</a>, 2013.</li>
+<li id="s21">IPCC AR6, <a href="https://www.ipcc.ch/site/assets/uploads/2023/03/Doc5_Adopted_AR6_SYR_Longer_Report.pdf">Synthesis Report, Longer Report</a>, 2023.</li>
+<li id="s22">Mauritsen et al., <a href="https://doi.org/10.1029/2012ms000154">"Tuning the climate of a global model"</a>, JAMES, 2012.</li>
+<li id="s23">Hourdin et al., <a href="https://doi.org/10.1175/BAMS-D-15-00135.1">"The Art and Science of Climate Model Tuning"</a>, BAMS 98(3), 2017.</li>
+<li id="s24">Tebaldi &amp; Knutti, <a href="https://doi.org/10.1098/rsta.2007.2076">"The use of the multi-model ensemble in probabilistic climate projections"</a>, Phil. Trans. R. Soc. A, 2007.</li>
+<li id="s25">US EPA, <a href="https://www.epa.gov/sites/default/files/2021-04/heat-waves_fig-3.csv">U.S. Annual Heat Wave Index 1895–2020 (CSV)</a> and <a href="https://www.epa.gov/sites/default/files/2021-04/documents/heat-waves_td.pdf">technical documentation</a>.</li>
+<li id="s26">US EPA, <a href="https://web.archive.org/web/20251129000012/https:/www.epa.gov/climate-indicators/climate-change-indicators-heat-waves">Climate Change Indicators: Heat Waves</a> (archived).</li>
+<li id="s27">IPCC AR5 WGII, <a href="https://www.ipcc.ch/site/assets/uploads/2018/02/WGIIAR5-Chap10_FINAL.pdf">Chapter 10: Key Economic Sectors and Services</a>, 2014.</li>
+<li id="s28">Stroeve et al., <a href="https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2007GL029703">"Arctic sea ice decline: Faster than forecast"</a>, GRL, 2007.</li>
+<li id="s29">NSIDC, <a href="https://nsidc.org/news-analyses/news-stories/models-underestimate-loss-arctic-sea-ice">"Models underestimate loss of Arctic sea ice"</a>.</li>
+<li id="s30">An, Jalles &amp; Loungani, <a href="https://www.imf.org/-/media/files/publications/wp/2018/wp1839.pdf">"How Well Do Economists Forecast Recessions?"</a>, IMF WP/18/39, 2018.</li>
+<li id="s31">P. Loungani, <a href="https://unassumingeconomist.com/2018/03/how-well-do-economists-forecast-recessions/">The Unassuming Economist blog summary</a>, Mar 2018.</li>
+<li id="s32">Reifschneider &amp; Tulip, <a href="https://www.federalreserve.gov/econres/feds/gauging-the-uncertainty-of-the-economic-outlook-using-historical-forecasting-errors-the-federal-reserves-approach.htm">"Gauging the Uncertainty of the Economic Outlook Using Historical Forecasting Errors"</a>, FEDS 2017-020.</li>
+<li id="s33">Nature, <a href="https://www.nature.com/articles/s41586-025-09726-0">Retraction Note: "The economic commitment of climate change"</a> (Kotz, Levermann &amp; Wenz), Dec 2025.</li>
+<li id="s34">PIK, <a href="https://www.pik-potsdam.de/en/news/latest-news/questions-and-answers-nature-study">Questions and answers about the Nature study on economic damages</a>.</li>
+<li id="s35">Burke, Hsiang &amp; Miguel, <a href="https://www.nature.com/articles/nature15725">"Global non-linear effect of temperature on economic production"</a>, Nature 527, 2015.</li>
+<li id="s36">M. Weitzman, <a href="https://doi.org/10.1162/rest.91.1.1">"On Modeling and Interpreting the Economics of Catastrophic Climate Change"</a>, Rev. Econ. Stat., 2009.</li>
+<li id="s37">A. Dessler, <a href="https://www.theclimatebrink.com/p/climate-economics-has-let-us-down">"Climate economics has let us down"</a>, The Climate Brink.</li>
+<li id="s38"><a href="https://en.wikipedia.org/wiki/Lucas_critique">Lucas critique</a> (overview of R. Lucas, 1976).</li>
+<li id="s39">P. Romer, <a href="https://paulromer.net/the-trouble-with-macro/">"The Trouble with Macroeconomics"</a>, 2016.</li>
+<li id="s40">Feldman et al., <a href="https://www.nature.com/articles/nature14240">"Observational determination of surface radiative forcing by CO₂ from 2000 to 2010"</a>, Nature 519, 2015.</li>
+<li id="s41">Knutson et al., <a href="https://doi.org/10.1175/BAMS-D-18-0189.1">"Tropical Cyclones and Climate Change Assessment: Part I: Detection and Attribution"</a>, BAMS, 2019.</li>
+<li id="s42">Reason, <a href="https://reason.com/video/2023/02/13/the-shameless-attack-on-a-climate-change-dissenter/">"The Shameless Attack on a Climate Change Dissenter Steven Koonin"</a>, Feb 2023.</li>
+<li id="s43">Copernicus C3S Atlas, <a href="https://ecmwf-projects.github.io/c3s-atlas/notebooks/precipitation_uncertainty_training.html">Tutorial on regional precipitation projections and their uncertainty</a>.</li>
+<li id="s44">Climate Foresight, <a href="https://www.climateforesight.eu/articles/the-hot-model-problem/">"The 'hot model' problem: From democracy to meritocracy"</a>.</li>
+<li id="s45">IPCC AR5 WGII, <a href="https://www.ipcc.ch/site/assets/uploads/2018/03/ar5_wgII_spm_en-1.pdf">Summary for Policymakers</a>, 2014.</li>
+<li id="s46">Carbon Brief, <a href="https://www.carbonbrief.org/explainer-what-the-new-ipcc-report-says-about-extreme-weather-and-climate-change">"Explainer: What the new IPCC report says about extreme weather"</a>, 2021.</li>
+</ol>
+</section>
+</main>
+<footer>Built November 2026 as an independent explainer. Quotes appear only where they were verified against the linked source. Everything else is paraphrase. Charts tagged ILLUSTRATIVE show shapes, not data.</footer>
+<script>
+(function(){
+var NS="http://www.w3.org/2000/svg";
+function el(t,a,p){var e=document.createElementNS(NS,t);for(var k in a)e.setAttribute(k,a[k]);if(p)p.appendChild(e);return e}
+function txt(p,x,y,s,a){a=a||{};a.x=x;a.y=y;var t=el('text',a,p);t.textContent=s;return t}
+function svg(id,w,h,label){var d=document.getElementById(id);d.innerHTML='';var s=el('svg',{viewBox:'0 0 '+w+' '+h,role:'img','aria-label':label},d);return s}
+function lens(root){root.querySelectorAll('.draw').forEach(function(p){try{var L=Math.ceil(p.getTotalLength());p.style.setProperty('--len',L)}catch(e){}})}
+
+/* 5.1 energy */
+(function(){var s=svg('energy',800,330,'Bar chart of global energy flows versus human forcing');
+var rows=[['Incoming sunlight (top of atmosphere)',340,'#e0a526'],['Reflected sunlight',100,'#d9c27a'],['Outgoing thermal (top of atmosphere)',239,'#c2531b'],['Thermal emitted by surface',398,'#a24a2a'],['Back-radiation to surface',342,'#7a4a8a'],['Human forcing since 1750 (2019)',2.72,'#d62828']];
+var x0=300,W=470,max=400;
+rows.forEach(function(r,i){var y=14+i*48;txt(s,x0-10,y+20,r[0],{'text-anchor':'end','font-size':13});
+el('rect',{x:x0,y:y+4,width:W,height:24,rx:5,fill:'var(--line)',opacity:.4},s);
+var w=Math.max(2,W*r[1]/max);el('rect',{x:x0,y:y+4,width:w,height:24,rx:5,fill:r[2],class:'grow',style:'transition-delay:'+(i*0.15)+'s'},s);
+var t=txt(s,x0+w+6,y+21,r[1]+' W/m²',{'font-size':13,'font-weight':700,class:'fade'});if(i==5){t.setAttribute('fill','#d62828')}});
+var g=el('g',{class:'fade',style:'transition-delay:1.4s'},s);
+el('circle',{cx:x0+2,cy:14+5*48+16,r:11,fill:'none',stroke:'#d62828','stroke-width':2,class:'pulse'},g);
+txt(g,x0+150,14+5*48+21,'≈ 0.8% of incoming sunlight, ≈1.1% of absorbed (~240)',{'font-size':13,class:'m'});
+})();
+
+/* 5.2 absolute temperature (illustrative) */
+(function(){var d=document.getElementById('abstemp');d.innerHTML='<div class="legend"><button class="btn" aria-pressed="true" id="absBtn">Absolute °C</button><button class="btn" aria-pressed="false" id="anoBtn">As anomalies</button></div><div id="absSvg"></div>';
+var offs=[-1.9,-1.5,-1.1,-0.8,-0.5,-0.2,0.2,0.6,1.0];
+function draw(anom){var s=svg('absSvg',800,300,'Illustrative model curves of global temperature, absolute vs anomaly');
+var X=function(t){return 60+(t-1900)/120*700},Y=anom?function(v){return 260-(v+0.5)/2.5*220}:function(v){return 260-(v-11.5)/5*220};
+var ticks=anom?[-0.5,0,0.5,1,1.5,2]:[12,13,14,15,16];
+ticks.forEach(function(v){el('line',{x1:60,x2:760,y1:Y(v),y2:Y(v),class:'ax'},s);txt(s,52,Y(v)+4,(anom&&v>0?'+':'')+v+' °C',{'text-anchor':'end','font-size':12,class:'m'})});
+[1900,1950,2000,2020].forEach(function(t){txt(s,X(t),285,t,{'text-anchor':'middle','font-size':12,class:'m'})});
+function f(t){var u=(t-1900)/120;return 1.05*Math.pow(u,2.2)}
+offs.forEach(function(o,i){var dd='';for(var t=1900;t<=2020;t+=4){var v=anom?f(t)+(i%3-1)*0.06:14+o+f(t)-0.5;dd+=(t==1900?'M':'L')+X(t).toFixed(1)+' '+Y(v).toFixed(1)}
+el('path',{d:dd,fill:'none',stroke:'hsl('+(190+i*14)+',60%,48%)','stroke-width':2.5,class:'draw',style:'transition-delay:'+(i*0.08)+'s'},s)});
+var dd='';for(var t=1900;t<=2020;t+=4){var v=anom?f(t):14+f(t)-0.5;dd+=(t==1900?'M':'L')+X(t).toFixed(1)+' '+Y(v).toFixed(1)}
+el('path',{d:dd,fill:'none',stroke:'var(--ink)','stroke-width':3.5,'stroke-dasharray':'7 5'},s);
+txt(s,X(2020)-4,Y(anom?f(2020):13.5+f(2020))-10,'"observed" (illustrative)',{'text-anchor':'end','font-size':12,'font-weight':700});
+if(!anom){var g=el('g',{class:'fade'},s);el('line',{x1:775,x2:775,y1:Y(14+offs[0]+0.55),y2:Y(14+offs[8]+0.55),stroke:'var(--accent2)','stroke-width':3},g);txt(g,790,Y(14.1),'~3 K',{'font-size':13,'font-weight':700,fill:'var(--accent2)'})}
+lens(s);var fig=document.getElementById('f-abs');if(fig.classList.contains('in')){s.classList.add('in')}else{s.classList.add('pending')}}
+draw(false);
+var a=document.getElementById('absBtn'),b=document.getElementById('anoBtn');
+a.onclick=function(){a.setAttribute('aria-pressed','true');b.setAttribute('aria-pressed','false');draw(false);requestAnimationFrame(function(){document.querySelector('#absSvg svg').classList.add('in')})};
+b.onclick=function(){b.setAttribute('aria-pressed','true');a.setAttribute('aria-pressed','false');draw(true);requestAnimationFrame(function(){document.querySelector('#absSvg svg').classList.add('in')})};
+})();
+
+/* 5.3 ECS */
+(function(){var s=svg('ecs',800,300,'Assessed ranges of equilibrium climate sensitivity from 1979 to 2021');
+var X=function(v){return 170+(v-1)/5*580};
+[1,2,3,4,5,6].forEach(function(v){el('line',{x1:X(v),x2:X(v),y1:20,y2:255,class:'ax'},s);txt(s,X(v),275,v+' °C',{'text-anchor':'middle','font-size':12,class:'m'})});
+var rows=[['Charney 1979',1.5,4.5,3,null],['IPCC AR4 2007',2,4.5,3,null],['IPCC AR5 2013',1.5,4.5,null,null],['IPCC AR6 2021',2.5,4,3,[2,5]]];
+rows.forEach(function(r,i){var y=40+i*52;txt(s,160,y+16,r[0],{'text-anchor':'end','font-size':14,'font-weight':600});
+if(r[4]){el('line',{x1:X(r[4][0]),x2:X(r[4][1]),y1:y+11,y2:y+11,stroke:'var(--accent)','stroke-width':2,class:'grow',style:'transition-delay:'+(i*0.3)+'s'},s)}
+el('rect',{x:X(r[1]),y:y,width:X(r[2])-X(r[1]),height:22,rx:6,fill:'var(--accent)',opacity:.85,class:'grow',style:'transition-delay:'+(i*0.3)+'s'},s);
+if(r[3])el('circle',{cx:X(r[3]),cy:y+11,r:6,fill:'#fff',stroke:'var(--ink)','stroke-width':2,class:'fade',style:'transition-delay:'+(0.6+i*0.3)+'s'},s);
+else txt(s,X(5.1),y+16,'no best estimate',{'font-size':12,class:'m fade'})});
+var g=el('g',{class:'fade',style:'transition-delay:1.8s'},s);
+el('line',{x1:X(5),x2:X(5),y1:20,y2:250,stroke:'var(--accent2)','stroke-width':2,'stroke-dasharray':'5 4'},g);
+txt(g,X(5)+6,32,'≈1 in 5 CMIP6 models ≥ 5 °C',{'font-size':12,fill:'var(--accent2)','font-weight':700});
+txt(g,X(4.7)-4,250,'CMIP5 max 4.7',{'font-size':11,class:'m','text-anchor':'end'});
+})();
+
+/* 5.4 heat wave */
+var HW="1895:0.025,1896:0.088,1897:0.159,1898:0.06,1899:0.05,1900:0.123,1901:0.318,1902:0.063,1903:0.01,1904:0.006,1905:0.045,1906:0.035,1907:0.022,1908:0.036,1909:0.047,1910:0.066,1911:0.195,1912:0.035,1913:0.09,1914:0.104,1915:0.035,1916:0.134,1917:0.173,1918:0.233,1919:0.03,1920:0.008,1921:0.116,1922:0.019,1923:0.025,1924:0.04,1925:0.157,1926:0.056,1927:0.007,1928:0.056,1929:0.022,1930:0.531,1931:0.562,1932:0.121,1933:0.221,1934:0.869,1935:0.168,1936:1.281,1937:0.067,1938:0.041,1939:0.088,1940:0.222,1941:0.181,1942:0.078,1943:0.072,1944:0.067,1945:0.005,1946:0.013,1947:0.149,1948:0.091,1949:0.071,1950:0.015,1951:0.061,1952:0.192,1953:0.075,1954:0.291,1955:0.135,1956:0.029,1957:0.005,1958:0.024,1959:0.017,1960:0.035,1961:0.038,1962:0.028,1963:0.027,1964:0.042,1965:0.007,1966:0.043,1967:0.001,1968:0.017,1969:0.027,1970:0.019,1971:0.04,1972:0.029,1973:0.022,1974:0.015,1975:0.058,1976:0.049,1977:0.087,1978:0.031,1979:0.021,1980:0.259,1981:0.072,1982:0.009,1983:0.144,1984:0.013,1985:0.028,1986:0.081,1987:0.052,1988:0.315,1989:0.039,1990:0.073,1991:0.039,1992:0.032,1993:0.043,1994:0.081,1995:0.09,1996:0.016,1997:0.013,1998:0.135,1999:0.095,2000:0.09,2001:0.104,2002:0.11,2003:0.12,2004:0.011,2005:0.052,2006:0.214,2007:0.171,2008:0.032,2009:0.068,2010:0.154,2011:0.301,2012:0.262,2013:0.089,2014:0.032,2015:0.107,2016:0.069,2017:0.086,2018:0.115,2019:0.058,2020:0.129".split(',').map(function(p){var a=p.split(':');return [+a[0],+a[1]]});
+function heat(from){var s=svg('heat',800,280,'US annual heat wave index bar chart');var data=HW.filter(function(d){return d[0]>=from});
+var max=from<1930?1.3:0.35;var n=data.length,bw=700/n;var Y=function(v){return 240-v/max*210};
+[0,max/2,max].forEach(function(v){el('line',{x1:60,x2:760,y1:Y(v),y2:Y(v),class:'ax'},s);txt(s,52,Y(v)+4,v.toFixed(2),{'text-anchor':'end','font-size':11,class:'m'})});
+data.forEach(function(d,i){var h=240-Y(Math.min(d[1],max));var dec=d[0]>=1930&&d[0]<1940;
+el('rect',{x:60+i*bw,y:Y(Math.min(d[1],max)),width:Math.max(1,bw-1),height:Math.max(0.5,h),fill:dec?'var(--accent2)':'var(--accent)',class:'growy',style:'transition-delay:'+(i*0.008)+'s'},s);
+if(d[0]%20==0||d[0]==from)txt(s,60+i*bw+bw/2,258,d[0],{'text-anchor':'middle','font-size':11,class:'m'})});
+if(from<1930){txt(s,60+(1936-from)*bw+10,Y(1.281)+12,'1936: 1.281 (Dust Bowl)',{'font-size':12,'font-weight':700,class:'fade'})}
+else{txt(s,400,30,'Same data, starting in 1960: a mild upward drift appears',{'text-anchor':'middle','font-size':12,class:'m fade'})}
+return s}
+heat(1895);
+document.querySelectorAll('#hwbtns .btn').forEach(function(b){b.onclick=function(){document.querySelectorAll('#hwbtns .btn').forEach(function(c){c.setAttribute('aria-pressed','false')});b.setAttribute('aria-pressed','true');var s=heat(+b.dataset.from);requestAnimationFrame(function(){requestAnimationFrame(function(){s.classList.add('in')})})}});
+
+/* 5.5 sea level */
+(function(){var s=svg('sea',800,290,'Rates of global mean sea level rise by period');
+var rows=[['1901–1971',1.3,0],['1920–1950 (AR5: "likely" ≈ 3.2)',3.2,1],['1971–2006',1.9,0],['2006–2018',3.7,0]];
+var Y=function(v){return 240-v/4*200};
+el('defs',{},s).innerHTML='<pattern id="stripe" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="8" height="8" fill="var(--ill)"/><line x1="0" y1="0" x2="0" y2="8" stroke="var(--illline)" stroke-width="4"/></pattern>';
+[0,1,2,3,4].forEach(function(v){el('line',{x1:60,x2:760,y1:Y(v),y2:Y(v),class:'ax'},s);txt(s,52,Y(v)+4,v+' mm/yr',{'text-anchor':'end','font-size':11,class:'m'})});
+rows.forEach(function(r,i){var x=100+i*170;el('rect',{x:x,y:Y(r[1]),width:110,height:240-Y(r[1]),rx:6,fill:r[2]?'url(#stripe)':'var(--accent)',stroke:r[2]?'var(--illline)':'none',class:'growy',style:'transition-delay:'+(i*0.25)+'s'},s);
+txt(s,x+55,Y(r[1])-8,r[2]?'~3.2?':r[1],{'text-anchor':'middle','font-size':14,'font-weight':700,class:'fade'});
+txt(s,x+55,262,r[0].split(' (')[0],{'text-anchor':'middle','font-size':12});if(r[2])txt(s,x+55,278,'AR5 statement, not a measurement',{'text-anchor':'middle','font-size':10.5,class:'m'})});
+})();
+
+/* 5.7 gdp */
+(function(){var s=svg('gdp',800,280,'US GDP projections with and without climate impacts');
+var X=function(y){return 70+(y-2020)/70*660},Y=function(v){return 245-v/85*220};
+[0,20,40,60,80].forEach(function(v){el('line',{x1:70,x2:730,y1:Y(v),y2:Y(v),class:'ax'},s);txt(s,62,Y(v)+4,'$'+v+'T',{'text-anchor':'end','font-size':11,class:'m'})});
+[2020,2040,2060,2090].forEach(function(y){txt(s,X(y),266,y,{'text-anchor':'middle','font-size':12,class:'m'})});
+var cs=[[0,'var(--accent)','No climate impact'],[0.04,'var(--warn)','−4% in 2090 (+5 °C, NCA2018)'],[0.10,'var(--bad)','−10% in 2090 (+7.2 °C)']];
+cs.forEach(function(c,i){var d='';for(var t=0;t<=70;t++){var v=20*Math.pow(1.02,t)*(1-c[0]*t/70);d+=(t?'L':'M')+X(2020+t).toFixed(1)+' '+Y(v).toFixed(1)}
+el('path',{d:d,fill:'none',stroke:c[1],'stroke-width':3,class:'draw',style:'transition-delay:'+(i*0.3)+'s'},s);
+var end=20*Math.pow(1.02,70)*(1-c[0]);txt(s,X(2020)+20,40+i*18,'■ '+c[2]+': $'+end.toFixed(1)+'T',{'font-size':12,fill:c[1],'font-weight':700,class:'fade'})});
+var g=el('g',{class:'fade',style:'transition-delay:2s'},s);
+txt(g,X(2088),Y(60),'4% ≈ 2 years of growth',{'text-anchor':'end','font-size':12,'font-weight':700});
+lens(s)})();
+(function(){var s=svg('dmg',800,240,'Range of published economic damage estimates');
+var X=function(v){return 300+v/35*460};
+[0,10,20,30].forEach(function(v){el('line',{x1:X(v),x2:X(v),y1:10,y2:205,class:'ax'},s);txt(s,X(v),222,v+'%',{'text-anchor':'middle','font-size':12,class:'m'})});
+var rows=[['AR5 WGII (~2 °C extra, global)',0.2,2,null],['NCA2018 via Koonin (US, +5 °C, 2090)',4,4,null],['Kotz et al. 2024, RETRACTED (revised 17%, 6–31%)',6,31,17],['Burke et al. 2015 (global, 2100, unmitigated)',23,23,null]];
+rows.forEach(function(r,i){var y=20+i*46;txt(s,290,y+16,r[0],{'text-anchor':'end','font-size':12.5});
+if(r[1]==r[2])el('circle',{cx:X(r[1]),cy:y+11,r:8,fill:'var(--accent2)',class:'fade',style:'transition-delay:'+(i*0.3)+'s'},s);
+else el('rect',{x:X(r[1]),y:y+3,width:Math.max(4,X(r[2])-X(r[1])),height:16,rx:8,fill:i==2?'url(#stripe2)':'var(--accent2)',stroke:'var(--accent2)',class:'grow',style:'transition-delay:'+(i*0.3)+'s'},s);
+if(r[3])el('circle',{cx:X(r[3]),cy:y+11,r:6,fill:'#fff',stroke:'var(--ink)','stroke-width':2,class:'fade'},s)});
+el('defs',{},s).innerHTML='<pattern id="stripe2" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="8" height="8" fill="var(--crit)"/><line x1="0" y1="0" x2="0" y2="8" stroke="var(--critline)" stroke-width="3"/></pattern>';
+txt(s,X(17),235,'% of GDP / income lost (not like-for-like)',{'text-anchor':'middle','font-size':11,class:'m'});
+})();
+
+/* 7.4 scorecard */
+(function(){var s=svg('score',800,300,'Editorial scorecard comparing climate and economic models on what, how much, when and why');
+var rows=[['WHAT (direction)',4,2.5,'global: strong; regional rain: weak','sign of trends OK; turning points not'],['HOW MUCH (magnitude)',3.5,2,'global T good; ECS ±~1.6×','GDP RMSE ≈ 2 pts'],['WHEN (timing)',2.5,1,'sea ice too slow; tipping points unknown','148/153 recessions missed'],['WHY (cause)',4,2,'global: unequivocal; events: weak','identification contested']];
+var X=function(v){return 200+v/5*330};
+rows.forEach(function(r,i){var y=14+i*70;txt(s,190,y+26,r[0],{'text-anchor':'end','font-size':13,'font-weight':700});
+el('rect',{x:200,y:y+6,width:X(5)-200,height:18,rx:4,fill:'var(--line)',opacity:.5},s);el('rect',{x:200,y:y+30,width:X(5)-200,height:18,rx:4,fill:'var(--line)',opacity:.5},s);
+el('rect',{x:200,y:y+6,width:X(r[1])-200,height:18,rx:4,fill:'var(--accent)',class:'grow',style:'transition-delay:'+(i*0.2)+'s'},s);
+el('rect',{x:200,y:y+30,width:X(r[2])-200,height:18,rx:4,fill:'var(--accent2)',class:'grow',style:'transition-delay:'+(i*0.2+0.1)+'s'},s);
+txt(s,X(5)+8,y+20,'Climate: '+r[3],{'font-size':11,class:'m'});txt(s,X(5)+8,y+44,'Econ: '+r[4],{'font-size':11,class:'m'})});
+var g=el('g',{},s);el('rect',{x:200,y:290,width:12,height:8,fill:'var(--accent)'},g);txt(g,216,298,'Climate models (global physics)',{'font-size':11});el('rect',{x:430,y:290,width:12,height:8,fill:'var(--accent2)'},g);txt(g,446,298,'Macro-economic forecasting',{'font-size':11});
+})();
+
+/* 7.5 horizon */
+(function(){var s=svg('horizon',800,300,'Conceptual curves of forecast skill against horizon for weather, global climate, regional rainfall and macroeconomics');
+var lx=function(days){return 70+(Math.log10(days)-0)/(Math.log10(36500))*680};var Y=function(v){return 250-v*220};
+[[1,'1 day'],[7,'1 wk'],[30,'1 mo'],[365,'1 yr'],[3650,'10 yr'],[36500,'100 yr']].forEach(function(t){el('line',{x1:lx(t[0]),x2:lx(t[0]),y1:20,y2:250,class:'ax'},s);txt(s,lx(t[0]),268,t[1],{'text-anchor':'middle','font-size':12,class:'m'})});
+txt(s,20,30,'skill',{'font-size':12,class:'m'});txt(s,20,250,'none',{'font-size':12,class:'m'});
+function curve(fn,col,lab,lp,dash){var d='';for(var i=0;i<=100;i++){var L=i/100*Math.log10(36500);var days=Math.pow(10,L);d+=(i?'L':'M')+lx(days).toFixed(1)+' '+Y(fn(L)).toFixed(1)}
+el('path',{d:d,fill:'none',stroke:col,'stroke-width':3.5,'stroke-dasharray':dash||'',class:dash?'':'draw'},s);txt(s,lx(Math.pow(10,lp[0])),Y(lp[1]),lab,{'font-size':12,'font-weight':700,fill:col})}
+curve(function(L){return 0.92/(1+Math.exp((L-1.05)*6))},'#3a7bd5','Weather',[0.05,0.98]);
+curve(function(L){return 0.08+0.8/(1+Math.exp(-(L-3.4)*3.2))},'var(--good)','Global-mean climate (conditional on scenario)',[2.6,0.96]);
+curve(function(L){return 0.1+0.18/(1+Math.exp(-(L-3.6)*3))},'var(--warn)','Regional rainfall',[3.3,0.38]);
+curve(function(L){return 0.55/(1+Math.exp((L-2.45)*5))+0.03},'var(--accent2)','Macro GDP / recessions',[1.2,0.62]);
+lens(s)})();
+
+/* reveal */
+var io=('IntersectionObserver' in window)?new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');e.target.querySelectorAll('svg').forEach(function(s){s.classList.add('in')});io.unobserve(e.target)}})},{threshold:0.15}):null;
+document.querySelectorAll('svg').forEach(lens);
+document.querySelectorAll('.reveal,.fig').forEach(function(n){if(io)io.observe(n);else n.classList.add('in')});
+if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches){document.querySelectorAll('.reveal,.fig,svg').forEach(function(n){n.classList.add('in')})}
+})();
+</script>
+</body></html>
